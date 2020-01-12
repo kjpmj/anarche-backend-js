@@ -34,3 +34,21 @@ export const getPriceTab1 = async ctx => {
     ctx.throw(500, e);
   }
 };
+
+export const getPriceTab2 = async ctx => {
+  const { server, itemname } = ctx.params;
+
+  try {
+    const itemInfoList = await svc.getPriceTab2(server, itemname);
+
+    if (itemInfoList.length === 0) {
+      ctx.status = 404;
+      ctx.body = [];
+      return;
+    }
+
+    ctx.body = itemInfoList;
+  } catch (e) {
+    ctx.throw(500, e);
+  }
+};

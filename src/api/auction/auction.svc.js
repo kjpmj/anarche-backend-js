@@ -136,3 +136,19 @@ export const getPriceTab1 = async (server, itemname) => {
     return [];
   }
 };
+
+export const getPriceTab2 = async (server, itemname) => {
+  try {
+    switch (itemname) {
+      case '손질된 고기':
+        return [
+          await getPrice(server, itemname),
+          await getPrice(server, '생가죽'),
+        ];
+      default:
+        return [];
+    }
+  } catch (e) {
+    return [];
+  }
+};
