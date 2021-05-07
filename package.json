@@ -14,7 +14,7 @@
     "koa-send": "^5.0.0",
     "koa-static": "^5.0.0",
     "querystring": "^0.2.0",
-    "underscore": "^1.9.1"
+    "underscore": "^1.12.1"
   },
   "devDependencies": {
     "eslint": "^6.7.1",
